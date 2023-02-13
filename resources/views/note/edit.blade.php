@@ -31,7 +31,7 @@
     <label for="my-modal" class="modal cursor-pointer">
         <label class="modal-box relative">
             <h3 class="font-bold text-lg">
-                Create A New Note!
+                Update the note
             </h3>
             <label class="label mt-4">
                 <span class="label-text">Title :</span>
@@ -39,7 +39,7 @@
             <input type="text" name="title" value="{{ old('title', $note->title) }}" class="input input-bordered w-full max-w-xs" placeholder="Input Title Here!">
             <div class="modal-action">
                 <label for="my-modal" class="btn btn-outline btn-error">Cancel</label>
-                <button type="submit" class="btn btn-outline btn-primary">Create New Note</button>
+                <button type="submit" class="btn btn-outline btn-primary">Update the note</button>
             </div>
         </label>
     </label>
