@@ -13,7 +13,7 @@
                 class="text-center p-2 mt-5 w-full rounded-3xl btn btn-outline"
             >
                 @guest
-                    You Must Login To Enter The App!
+                    Login
                     @else
                     Go to the App
                 @endguest
