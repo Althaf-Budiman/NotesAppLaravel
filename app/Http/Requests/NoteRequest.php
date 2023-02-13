@@ -14,7 +14,7 @@ class NoteRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
         // nanti buat atentikasi harus di true
     }
 

@@ -10,17 +10,21 @@
     </div>
     <div class="flex flex-row flex-wrap mt-5 mx-8 justify-center gap-10">
         @foreach ($data as $item)
-            <div class="card w-96 bg-slate-800 hover:bg-slate-900 transition shadow-2xl">
-                <div class="card-body">
-                    <h1 class="card-title">{{ $item->title }}</h1>
-                    <p class="max-h-32 overflow-y-auto mt-3">{{ $item->note }}</p>
-                    <div class="flex flex-row gap-2">
-                        <div class="btn btn-outline btn-error btn-block">
-                            <p>Delete</p>
+            <form action="{{ url("/notes/$item->id") }}" method="POST">
+                <a href="{{ url("/notes/$item->edit") }}">
+                    <div class="card w-96 bg-slate-800 hover:bg-slate-900 transition shadow-2xl">
+                        <div class="card-body">
+                            <h1 class="card-title">{{ $item->title }}</h1>
+                            <p class="max-h-32 overflow-y-auto mt-3">{{ $item->note }}</p>
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-outline btn-error btn-block">
+                                <p>Delete</p>
+                            </button>
                         </div>
                     </div>
-                </div>
-            </div>
+                </a>
+            </form>
         @endforeach
     </div>
 @endsection

@@ -8,6 +8,17 @@
         name="note"
     >{{ old('note') }}</textarea>
 
+
+    @if ($errors->any())
+        <div class="alert alert-error fixed top-60 left-auto right-auto">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li class="text-white font-bold">{{ $error }}</li> <br>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <!-- The button to open modal -->
     <label
         for="my-modal"
@@ -18,15 +29,6 @@
     <input type="checkbox" id="my-modal" class="modal-toggle" />
     <label for="my-modal" class="modal cursor-pointer">
         <label class="modal-box relative">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
             <h3 class="font-bold text-lg">
                 Create A New Note!
             </h3>
