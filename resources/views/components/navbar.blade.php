@@ -3,6 +3,12 @@
     <a href="{{ url('/') }}" class="btn btn-ghost normal-case text-xl">Notes App</a>
   </div>
   <div class="navbar-end">
-    <a href="{{ route('register') }}" class="btn btn-outline btn-warning mr-5">Register</a>
+    @guest
+    <a href="{{ route('register') }}" class="btn btn-outline btn-warning mr-2">Register</a>
+    <a href="{{ route('login') }}" class="btn btn-outline btn-primary mr-5">Login</a>
+    @else
+    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('form-logout').submit()" class="btn btn-outline btn-error mr-5">Logout</a>
+    <form action="{{route('logout')}}" method="post" id="form-logout">@csrf</form>
+    @endguest
   </div>
 </div>
