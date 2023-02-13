@@ -24,7 +24,7 @@
     <label
         for="my-modal"
         class="fixed z-90 bottom-10 right-8 btn w-20 h-20 rounded-full drop-shadow-lg flex justify-center items-center text-white text-xl hover:drop-shadow-2xl"
-        >Done</label
+        >Update</label
     >
     <!-- Put this part before </body> tag -->
     <input type="checkbox" id="my-modal" class="modal-toggle" />
