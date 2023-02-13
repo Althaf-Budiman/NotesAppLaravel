@@ -30,12 +30,4 @@ class NoteRequest extends FormRequest
             'note' => ['required'],
         ];
     }
-
-    public function messages()
-    {
-        return [
-            'title.required' => 'Judul Harus Diisi',
-            'note.required' => 'Catatan Harus Diisi'
-        ];
-    }
 }
