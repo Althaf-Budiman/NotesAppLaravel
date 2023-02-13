@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('main')
     <div class="flex justify-center">
-        <a href="{{ url('/notes/create') }}">
+        <a href="{{ url('/notes/create') }}" title="Create New Note">
             <button class="btn gap-2 mt-5">
                 Create New Note
                 <svg class="h-6 w-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="create-note" class="icon glyph" fill="#B5CDF5">
@@ -18,14 +18,14 @@
     <div class="flex flex-row flex-wrap mt-5 mx-8 justify-center gap-10">
         @foreach ($data as $item)
             <form action="{{ url("/notes/$item->id") }}" method="POST">
-                <a href="{{ url("/notes/$item->id/edit") }}">
+                <a href="{{ url("/notes/$item->id/edit") }}" title="View Or Edit Note">
                     <div class="card w-96 bg-slate-800 hover:bg-slate-900 transition shadow-2xl">
                         <div class="card-body">
                             <h1 class="card-title">{{ $item->title }}</h1>
                             <p class="max-h-32 overflow-y-auto mt-3">{{ $item->note }}</p>
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-outline btn-error btn-block mt-3">
+                            <button type="submit" class="btn btn-outline btn-error btn-block mt-3" title="Delete Note">
                                 <p>Delete</p>
                             </button>
                         </div>

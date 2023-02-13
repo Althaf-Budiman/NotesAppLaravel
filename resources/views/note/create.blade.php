@@ -23,7 +23,7 @@
     <label
         for="my-modal"
         class="fixed z-90 bottom-10 right-8 btn w-20 h-20 rounded-full drop-shadow-lg flex justify-center items-center text-white text-xl hover:drop-shadow-2xl"
-        >
+        title="Done Create Note" >
         <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="SVGRepo_bgCarrier" stroke-width="0" />
 
