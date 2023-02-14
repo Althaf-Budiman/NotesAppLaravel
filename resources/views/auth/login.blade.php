@@ -30,6 +30,8 @@
                     @enderror
 
                     <a href="{{ route('register') }}" class="underline text-warning">Don't have an account?</a>
+
+                    <a href="{{ route('password.request') }}" class="underline text-error mt-1">Forgot Password?</a>
                     
                     <button type="submit" class="btn btn-outline btn-success mt-3">Login</button>
                 </div>
