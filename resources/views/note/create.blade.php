@@ -3,8 +3,8 @@
 <form action="{{ url('/notes') }}" method="post">
     @csrf
     <textarea
-        class="h-screen bg-transparent w-full"
-        placeholder="  Type here.."
+        class="h-screen bg-transparent w-full p-5"
+        placeholder="Type here.."
         name="note"
     >{{ old('note') }}</textarea>
 
