@@ -19,14 +19,14 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/notes', [NoteController::class, 'index']);
 
-Route::get('/notes/create', [NoteController::class, 'create']);
+Route::get('/notes/create', [NoteController::class, 'create'])->middleware('is_admin');
 
 Route::get('/notes/{id}', [NoteController::class, 'show']);
 
-Route::post('/notes', [NoteController::class, 'store']);
+Route::post('/notes', [NoteController::class, 'store'])->middleware('is_admin');
 
-Route::get('/notes/{id}/edit', [NoteController::class, 'edit']);
+Route::get('/notes/{id}/edit', [NoteController::class, 'edit'])->middleware('is_admin');
 
-Route::patch('/notes/{id}', [NoteController::class, 'update']);
+Route::patch('/notes/{id}', [NoteController::class, 'update'])->middleware('is_admin');
 
-Route::delete('/notes/{id}', [NoteController::class, 'delete']);
+Route::delete('/notes/{id}', [NoteController::class, 'delete'])->middleware('is_admin');

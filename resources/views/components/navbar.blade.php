@@ -1,6 +1,6 @@
 <div class="navbar bg-slate-800 sticky top-0 z-20">
   <div class="navbar-start">
-    <a href="{{ url('/') }}" class="btn btn-ghost normal-case text-xl">Notes App</a>
+    <a href="{{ url('/notes') }}" class="btn btn-ghost normal-case text-xl">Notes App</a>
   </div>
   <div class="navbar-end">
     @guest
