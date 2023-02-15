@@ -54,7 +54,7 @@
             <label class="label mt-4">
                 <span class="label-text">Title :</span>
             </label>
-            <input type="text" name="title" value="{{ old('title', $note->title) }}" class="input input-bordered w-full max-w-xs" placeholder="Input Title Here!">
+            <input type="text" maxlength="55" name="title" value="{{ old('title', $note->title) }}" class="input input-bordered w-full max-w-xs" placeholder="Input Title Here!">
             <div class="modal-action">
                 <label for="my-modal" class="btn btn-outline btn-error">Cancel</label>
                 <button type="submit" class="btn btn-outline btn-primary">Update the note</button>
