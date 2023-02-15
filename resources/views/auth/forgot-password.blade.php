@@ -1,6 +1,6 @@
 @extends('layouts.app') @section('main')
 
-<div class="flex justify-center items-center mt-5">
+<div class="flex justify-center items-center mt-5 h-[80vh]">
     <div
         class="card card-compact w-fit p-2 bg-neutral shadow-xl flex items-center text-center"
     >
