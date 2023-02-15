@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('main')
-    <div class="flex justify-center">
-        <a href="{{ url('/notes/create') }}" title="Create New Note">
-            <button class="btn gap-2 mt-5">
-                Create New Note
-                <svg class="h-6 w-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="create-note" class="icon glyph" fill="#B5CDF5">
+    <a href="{{ url('/notes/create') }}" title="Create New Note">
+        <label
+            for="my-modal"
+            class="fixed z-90 bottom-10 right-8 btn w-20 h-20 rounded-full drop-shadow-lg flex justify-center items-center text-white text-xl hover:drop-shadow-2xl" >
+            <svg class="h-10 w-10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="create-note" class="icon glyph" fill="#B5CDF5">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"/>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
                     <g id="SVGRepo_iconCarrier">
@@ -12,9 +12,9 @@
                     <path d="M20,22H4a2,2,0,0,1-2-2V4A2,2,0,0,1,4,2h8a1,1,0,0,1,0,2H4V20H20V12a1,1,0,0,1,2,0v8A2,2,0,0,1,20,22Z" style="fill:#B5CDF5"/>
                     </g>
                 </svg>
-            </button>
-        </a>
-    </div>
+        </label
+    >
+    </a>
     <div class="flex flex-row flex-wrap mt-5 mx-8 justify-center gap-10">
         @foreach ($data as $item)
             <form action="{{ url("/notes/$item->id") }}" method="POST">
