@@ -3,30 +3,23 @@
 
     <div class="flex justify-center mt-6">
         {{-- card --}}
-        <form action="{{ route("register") }}" method="post">
+        <form action="{{ route("password.update") }}" method="post">
             @csrf
-            <div class="card card-compact w-fit bg-neutral shadow-xl flex items-center text-center">
-                <figure><img width="390" src="{{ asset('kumpulan-notes.jpg') }}" /></figure>
+            <div class="card card-compact w-fit bg-neutral shadow-xl flex items-center justify-center text-center">
                 <div class="card-body">
-                    <h2 class="font-bold text-2xl">Register</h2>
-                    <label class="label">
-                        <span class="label-text">Enter Your Name</span>
-                    </label>
-                    <input type="text" name="name" id="name" placeholder="Input Your Name Here" class="input input-bordered input-primary w-96 max-w-xs" value="{{old('name')}}" />
-                    @error('name')
-                        <span class="text-red-500">
-                            {{ $message }}
-                        </span>
-                    @enderror
+                    <h2 class="font-bold text-2xl">Reset Password</h2>
+                    <input type="hidden" name="token" value="{{ $request->route('token') }}">
+
                     <label class="label">
                         <span class="label-text">Enter Email</span>
                     </label>
-                    <input type="email" name="email" id="email" placeholder="Input Email Here" class="input input-bordered input-primary w-96 max-w-xs" value="{{old('email')}}" />
+                    <input type="email" name="email" id="email" placeholder="Input Email Here" class="input input-bordered input-primary w-96 max-w-xs" value="{{old('email', $request->email)}}" />
                     @error('email')
                         <span class="text-red-500">
                             {{ $message }}
                         </span>
                     @enderror
+
                     <label class="label">
                         <span class="label-text">Enter Password</span>
                     </label>
@@ -36,14 +29,13 @@
                             {{ $message }}
                         </span>
                     @enderror
-                    
+
                     <label class="label">
                         <span class="label-text">Confirm Your Password</span>
                     </label>
                     <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Input Password Confirmation Here" class="input input-bordered input-primary w-96 max-w-xs" />
                     
-                    
-                    <button type="submit" class="btn btn-outline btn-success mt-3">Register</button>
+                    <button type="submit" class="btn btn-outline btn-success mt-3">Reset Password</button>
                 </div>
             </div>
         </form>
