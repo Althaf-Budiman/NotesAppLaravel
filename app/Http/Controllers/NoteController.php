@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\NoteRequest;
 use App\Models\Note;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class NoteController extends Controller
@@ -65,5 +66,11 @@ class NoteController extends Controller
     {
         Note::find($id)->delete();
         return redirect('/notes');
+    }
+
+    public function userList()
+    {
+        $users = User::all();
+        return view('list-users', ['users' => $users]);
     }
 }
