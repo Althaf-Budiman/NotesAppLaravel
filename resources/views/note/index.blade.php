@@ -22,7 +22,7 @@
                     <div class="card w-96 bg-slate-800 hover:bg-slate-900 transition shadow-2xl">
                         <div class="card-body">
                             <h1 class="card-title">{{ $item->title }}</h1>
-                            <p class="max-h-32 mt-3 overflow-y-auto">{{ $item->note }}</p>
+                            <p class="max-h-32 mt-3 overflow-y-hidden">{{ $item->note }}</p>
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-outline btn-error btn-block mt-3" title="Delete Note">
